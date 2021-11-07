@@ -23,7 +23,7 @@ const useStyles = makeStyles({
   },
   ic: {
     color: "#FFFFFF",
-    // paddingLeft: "100px",
+    paddingLeft: "100px",
     paddingTop: "2em",
   },
   ictext: {
@@ -43,7 +43,6 @@ export const ContactInformation = (props) => {
         Contact Information
       </Typography>
       <Grid container spacing={1} alignContent="center" justifyContent="center">
-        
         <Grid item xs={3}>
           <CallIcon className={classes.ic} />
         </Grid>

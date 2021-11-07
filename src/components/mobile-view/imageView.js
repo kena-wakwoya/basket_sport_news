@@ -15,15 +15,17 @@ import { Brightness1 } from '@mui/icons-material';
 const useStyles = makeStyles({
 
     imageView: {
-    //   background: 'linear-gradient(270deg, rgba(1, 1, 0, 0.7) 70.52%, rgba(0, 0, 0, 0.581) 101.46%)',
+      background: 'linear-gradient(270deg, rgba(0, 0, 0, 0.7) 70.52%, rgba(0, 0, 0, 0.581) 101.46%)',
       backgroundImage: `url(./assets/images/beautiful-young-woman.jpg)`,
       backgroundAttachment:'top',
-      backgroundSize:'cover',      
+      backgroundSize:'cover', 
+      width:'100%',     
       height:'571px',
+
                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           
     },
     typgo:{
-        paddingTop:'50%',
+        paddingTop:'10%',
         
         color:'#E5E5E5',
         fontFamily:'Poppins',
@@ -41,6 +43,12 @@ const useStyles = makeStyles({
         color:'#FFFFFF',
         padding:'10%',
         textAlign:'center'
+    },
+    img:{
+        
+        background: 'linear-gradient(270deg, rgba(0, 0, 0, 0.7) 70.52%, rgba(0, 0, 0, 0.581) 101.46%)',
+        width:'100%'
+
     }
 
     // style={{ backgroundImage: "url(./assets/images/beautiful-young-woman.jpg)", backgroundSize:'cover', width: '100%',
@@ -55,7 +63,7 @@ export const ImageView = (props)=>{
     return (
 
     <Box  className = {classes.imageView}> 
-    {/* <img src = './assets/images/logo.png' /> */}
+    <img src = './assets/images/logo.png'  className = {classes.img}/>
     <Typography className = {classes.typgo} variant = "h3"> we are ready to <span className = {classes.span}>hear </span> from you</Typography>
     <Typography variant = "h6" className = {classes.typ}> You can reach by calling us, sending a message or even pay a warm visit</Typography>
     </Box>

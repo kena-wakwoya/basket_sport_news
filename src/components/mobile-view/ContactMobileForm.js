@@ -13,9 +13,9 @@ import { Typography } from '@mui/material';
 
 const useStyles = makeStyles({
     contactForm:{
-        width:"40%",
+        width:"100%",
         alignItems:'center',
-        marginLeft:'40%'
+
 
     },
     txtField:{
@@ -99,8 +99,7 @@ const initialFormValues = {
     return (
         <Box className = {classes.contactForm}>
 
-            <MenuBar />
-
+            
             <ImageView />
             <Box className = {classes.rectangle}>
             
