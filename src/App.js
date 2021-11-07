@@ -1,10 +1,11 @@
-import { ContactForm } from "./components/contactForm";
+
+import { ContactMobileForm } from "./components/ContactMobileForm";
 
 
 function App() {
   return (
     <div>
-      <ContactForm />
+      <ContactMobileForm />
       
     </div>
   );

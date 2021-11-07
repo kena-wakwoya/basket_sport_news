@@ -1,69 +1,73 @@
-import { Button, Grid, makeStyles } from '@material-ui/core';
-import React from 'react';
+import { Button, Grid, makeStyles } from "@material-ui/core";
+import React from "react";
 
-import CallIcon from '@mui/icons-material/Call';
-import MailIcon from '@mui/icons-material/Mail';
-import LocationOnIcon from '@mui/icons-material/LocationOn';
+import CallIcon from "@mui/icons-material/Call";
+import MailIcon from "@mui/icons-material/Mail";
+import LocationOnIcon from "@mui/icons-material/LocationOn";
+import { Box } from "@mui/system";
+import { Typography } from "@mui/material";
 
 const useStyles = makeStyles({
-    info:{
-    background: '#2F2C2C',
-    
-        
-    },
-    ttile:{
-        fontFamily:'Quicksand',
-        fontWeight:'700',
-        fontSize:'30px',
-        lineHeight:'38px',
-        color:'#FFFFFF',
-        padding:'80px'
-        
-    },
-    ic:{
-        color:'#FFFFFF',
-        paddingLeft:'80px'
+  info: {
+    background: "#2F2C2C",
+    paddingBottom: "2em",
+  },
+  ttile: {
+    fontFamily: "Quicksand",
+    fontWeight: "bold",
 
-    },
-    ictext:{
-        fontFamily:'Quicksand',
-        fontWeight:'400',
-        color:'#FFFFFF',
-        // padding:'80px'
-    }
+    lineHeight: "38px",
+    color: "#FFFFFF",
+    textAlign: "center",
+    padding: "1em",
+  },
+  ic: {
+    color: "#FFFFFF",
+    paddingLeft: "100px",
+    paddingTop: "2em",
+  },
+  ictext: {
+    fontFamily: "Quicksand",
+    color: "#FFFFFF",
+    paddingTop: "2.1em",
+  },
+});
 
+export const ContactInformation = (props) => {
+  const classes = useStyles();
 
-})
+  return (
+    <Box className={classes.info}>
+      <Typography variant="h4" className={classes.ttile}>
+        {" "}
+        Contact Information
+      </Typography>
+      <Grid container spacing={1} alignContent="center" justifyContent="center">
+        <Grid item xs={3}>
+          <CallIcon className={classes.ic} />
+        </Grid>
 
-export const ContactInformation = (props)=>{
-    const classes = useStyles();
+        <Grid item xs={8}>
+          <Typography className={classes.ictext}>+234123456789 </Typography>
+        </Grid>
 
-    return (
-        <div className = {classes.info}>
-            <h1 className = {classes.ttile}> Contact Information</h1>
-        <Grid container spacing={3}>
-        <Grid item xs={4}>
-          <CallIcon className = {classes.ic} />
+        <Grid item xs={3}>
+          <MailIcon className={classes.ic} />
         </Grid>
         <Grid item xs={8}>
-        <p className = {classes.ictext}>+234123456789 </p>
+          <Typography className={classes.ictext}>
+            details@reachus.now{" "}
+          </Typography>
         </Grid>
-        <Grid item xs={4}>
-        <MailIcon className = {classes.ic} />
+        <Grid item xs={3}>
+          <LocationOnIcon className={classes.ic} />
         </Grid>
         <Grid item xs={8}>
-        <p className = {classes.ictext}>details@reachus.now </p>
-        </Grid>
-        <Grid item xs = {4}>
-            <LocationOnIcon  className = {classes.ic}/>
-        </Grid>
-        <Grid item xs = {4}>
-        <p className = {classes.ictext}>No 2A my company venue </p>
+          <Typography className={classes.ictext}>
+            No 2A my company venue{" "}
+          </Typography>
         </Grid>
       </Grid>
-            
-        
-
-        </div>
-    )
-}
+    </Box>
+  );
+};

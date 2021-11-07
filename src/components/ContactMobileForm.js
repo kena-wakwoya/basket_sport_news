@@ -9,6 +9,7 @@ import { ContactInformation } from './contactInformation';
 import { ContactIcons } from './contactIcons';
 import { MenuBar } from './menuBar';
 import { ImageView } from './imageView';
+import { Typography } from '@mui/material';
 
 const useStyles = makeStyles({
     contactForm:{
@@ -18,22 +19,19 @@ const useStyles = makeStyles({
 
     },
     txtField:{
-        marginTop:"2%",
-        fontFamily:'popins',
+        marginTop:"2em",
+        fontFamily:'Poppins',
         color:'rgba(0, 0, 0, 0.5)',
-        fontWeight:400,
+        
     },
     btn:{
-        backgroundColor:'#2F2C2C',
-        fontFamily:'popins',
-        fontSize:'110%',
-        lineHeight: '24px',
-        padding:'1em',
-        justifyItems:'center',
-        margin:'1em',
+        backgroundColor:'#2F2C2C',        
+        lineHeight: '24px',        
+        width:'234px',
+        height:'55px',
+        color:'#FFFFFF',
         
-        color:'white',
-        width:'84%',
+        justifyContent:'center',
         '&:hover':{
             backgroundColor:'#2F2C2C'
 
@@ -43,13 +41,15 @@ const useStyles = makeStyles({
     },
     cIcon:{
         color:'#FCE61D',
-        padding:'0.6em',
-        fontSize:'10em'
+        paddingLeft:'1em',
+        width:'30px',
+        height:'20px'
     },
     txt:{
         color:'#201F1E',
-        fontFamily:'poppins',
-        fontWeight:'400'
+        fontFamily:'Poppins',
+        padding:'1em'
+        
         
     },
     rectangle:{
@@ -58,7 +58,17 @@ const useStyles = makeStyles({
         backgroundColor:'#F9E31D',
         height:'100px'
         
+    },
+    txt1:{
+        
+        fontFamily:'Poppins',
+        padding:'1em'
+
+    },
+    input:{
+        color:'green'
     }
+
 
 })
 
@@ -69,7 +79,7 @@ const initialFormValues = {
     message:''
 
 }
- export const ContactForm = (props)=>{
+ export const ContactMobileForm = (props)=>{
      const [formValue,setFormValue] = useState(initialFormValues);
      const classes = useStyles();
    const handleChange = (e)=>{
@@ -87,21 +97,21 @@ const initialFormValues = {
          console.log(formValue);
      }
     return (
-        <div className = {classes.contactForm}>
+        <Box className = {classes.contactForm}>
 
-            {/* <MenuBar /> */}
+            <MenuBar />
 
             <ImageView />
-            <div className = {classes.rectangle}>
+            <Box className = {classes.rectangle}>
             
-            </div>
-            <div>
-                <p className = {classes.txt}>
+            </Box>
+            <Box>
+                <Typography className = {classes.txt}>
                     We won't be sharing any of your information with any one. We are completely at your service
-                </p>
-            </div>
+                </Typography>
+            </Box>
 
-           
+           <Box className = {classes.txt1}>
            <TextField className = {classes.txtField} 
            label="Full Name" 
            name = "fullName"
@@ -110,7 +120,7 @@ const initialFormValues = {
 
            fullWidth />
            <TextField 
-           
+           className = {classes.txtField}            
            label="Contact Address"  
            name = "address"
            value = {formValue.address}
@@ -118,6 +128,7 @@ const initialFormValues = {
 
            fullWidth />
            <TextField 
+           className = {classes.txtField} 
            label="Phone"  
            name = "phone"
            value = {formValue.phone}
@@ -132,26 +143,27 @@ const initialFormValues = {
             rows={10}
             variant="filled"
             placeholder = "Type your message here"
+            inputProps = {{className:classes.input}}
             fullWidth
             />
+            <Box textAlign = "center">
+                <Button 
+                className = {`${classes.txtField} ${classes.btn}`} 
+                
+                onClick = {handleSubmit}
+                endIcon={<TelegramIcon className = {classes.cIcon}/>}>
+                    SEND MESSAGE 
+                </Button>
+            </Box>
+      </Box>
 
-            <Button 
-            className = {`${classes.txtField} ${classes.btn}`} 
-            variant="contained" 
-            onClick = {handleSubmit}
-            endIcon={<TelegramIcon className = {classes.cIcon}
-           
-            />}>
-        SEND MESSAGE 
-      </Button>
-
-      <div>
+      <Box>
           < ContactInformation />
-      </div>
-           <div>
+      </Box>
+           <Box>
                <ContactIcons />
-               </div>
-        </div>
+               </Box>
+        </Box>
     )
 }
 
