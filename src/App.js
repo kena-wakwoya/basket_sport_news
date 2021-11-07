@@ -1,5 +1,5 @@
 
-import { ContactMobileForm } from "./components/ContactMobileForm";
+import { ContactMobileForm } from "./components/mobile-view/ContactMobileForm";
 
 
 function App() {

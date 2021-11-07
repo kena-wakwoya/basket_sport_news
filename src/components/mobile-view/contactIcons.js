@@ -3,7 +3,7 @@ import { Grid, makeStyles } from "@material-ui/core";
 import FacebookIcon from "@mui/icons-material/Facebook";
 import InstagramIcon from "@mui/icons-material/Instagram";
 import TwitterIcon from "@mui/icons-material/Twitter";
-import logo from "../images/logo.png";
+import logo from "../../images/logo.png";
 import { Box } from "@mui/system";
 import { Typography } from "@mui/material";
 const useStyles = makeStyles({
