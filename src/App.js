@@ -1,5 +1,6 @@
 
 import { ContactDesktopForm } from "./components/desktop-view/contactDesktopForm";
+import { TopNews } from "./components/desktop-view/TopNews";
 import { ContactMobileForm } from "./components/mobile-view/ContactMobileForm";
 
 
@@ -11,7 +12,7 @@ function App() {
   
   /* If the viewport is more narrow than the breakpoint render the
      mobile component, else render the desktop component */
-  return width < breakpoint ? <ContactMobileForm /> : <ContactDesktopForm />;
+  return width < breakpoint ? <ContactMobileForm /> : <TopNews />;
   
 }
 
